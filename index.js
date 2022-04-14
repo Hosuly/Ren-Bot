@@ -10,7 +10,7 @@ client.snipes = new Map();
 
 ['command', 'event', 'slash'].forEach( handler => require(`./handlers/${handler}`)(client) );
 
-client.on('messageDelete', function(message, channel){
+client.on('messageDelete', function(message, channel){ //Sn
     client.snipes.set(message.channel.id, {
         content: message.content,
         author: message.author.id,
