@@ -101,7 +101,7 @@ function RutiBot() {
         //     if (config.welcomePlayers = true) {
         //         if (player.username === bot.username) return;
         //         else {
-        //             bot.chat(`> Xin chào ${player.username}! Tớ là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Daddy Hosuly.`) // actually emits for every single player online to dont get kicked by server
+        //             bot.chat(`> Xin chào ${player.username}! Tớ là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Daddy Hosuly.`) // actually emits for every single player online to dont get kicked by server dont use it cuz it is so annoyingi
         //         }
         //     }
         // })
