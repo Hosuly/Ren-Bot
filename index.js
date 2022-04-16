@@ -26,7 +26,7 @@ client.on('messageDelete', function(message, channel){
 // Mineflayer Code
 function RutiBot() {
     const bot = mineflayer.createBot({
-        username: "__REN__",
+        username: "bot name here",
         host: `2y2c.org`,
         version: '1.17.1'
     });
@@ -60,7 +60,7 @@ function RutiBot() {
     
     bot.on('message', (msg) => {
         console.log(msg.toString())
-        client.channels.cache.get('964773010026418218').send('```\n' + `${msg.toString()}\n` + '```')
+        client.channels.cache.get('Channel ID here').send('```\n' + `${msg.toString()}\n` + '```')
     })
 }
 RutiBot();
