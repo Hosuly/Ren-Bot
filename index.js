@@ -57,6 +57,19 @@ function RutiBot() {
     
         setTimeout(() => { bot.clickWindow(10,0,0) }, 7*1000);
     }),
+        
+    setTimeout(() => {
+        bot.afk.setOptions({ rotate: true });
+        bot.afk.start();
+        bot.on('playerJoined', (player) => {
+            if (config.welcomePlayers = true) {
+                if (player.username === bot.username) return;
+                else {
+                    bot.chat(`> Xin chào ${player.username}. Tôi là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Hosuly.`) // actually emits for every single player online
+                }
+            }
+        })
+    }, 19*1119);
     
     bot.on('message', (msg) => {
         console.log(msg.toString())
