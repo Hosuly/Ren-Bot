@@ -4,7 +4,9 @@ const config = require('./config.json');
 const mineflayer = require('mineflayer');
 var tpsPlugin = require('mineflayer-tps')(mineflayer);
 const Vec3 = require('vec3').Vec3;
-const minecraft = require('minecraft-server-util')
+const Movements = require('mineflayer-pathfinder').Movements;
+const pathfinder = require('mineflayer-pathfinder').pathfinder;
+const minecraft = require('minecraft-server-util');
 const antiafk = require("mineflayer-antiafk");
 const ms = require("ms");
 var fs = require("fs");
@@ -28,14 +30,17 @@ client.on('messageDelete', function(message, channel){
 // Mineflayer Code (Some embed code overhere is from HungChannels <3)
 function RutiBot() {
     const bot = mineflayer.createBot({
-        username: "__REN__",
+        username: "bot username",
         host: `2y2c.org`,
         version: '1.17.1'
     });
 
     bot.loadPlugin(tpsPlugin);
     bot.loadPlugin(antiafk);
+    bot.loadPlugin(pathfinder)
+    const mcData = require('minecraft-data')(bot.version)
     module.exports = require('./commands/2y2c/antiafk');
+    const defaultMove = new Movements(bot, mcData)
     var livechat = config.livechat
     var time = 5;
 
@@ -81,14 +86,16 @@ function RutiBot() {
 
     bot.once('login', () => {
         bot.once('spawn', () => {
-            const joined = new MessageEmbed().setDescription(`${"**Ren đã ngủ dậy rồi đây!**"}`).setColor('BLURPLE')
-            client.channels.cache.get(livechat).send({ embeds: [joined] });
+            const imjoin = new MessageEmbed().setDescription("**Ren đã ngủ dậy rồi đây!**").setColor('BLURPLE')
+            client.channels.cache.get(livechat).send({ embeds: [imjoin] });
             console.log("Ren đã ngủ dậy rồi đây!");
             setInterval(() => {
+                bot.afk.start()
+                bot.chat('> join Ruti for Ren. please~ -w- | https://discord.gg/QRFes3n4We') || bot.chat('> Xin chào mọi người! Tớ là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Daddy Hosuly.')
                 bot.swingArm("left")
                 bot.look(Math.floor(Math.random() * Math.floor("360")), 0, true, null)
-            }, ms(`${"230s"}`))
-            bot.once("message", () => {
+            }, ms(`${"28s"}`))
+            bot.once("chat", () => {
                 bot.chat('/skin GoCryBabe');
             })
           console.log(bot.entity.position.x, bot.entity.position.y, bot.entity.position.z);
@@ -101,7 +108,7 @@ function RutiBot() {
         //     if (config.welcomePlayers = true) {
         //         if (player.username === bot.username) return;
         //         else {
-        //             bot.chat(`> Xin chào ${player.username}! Tớ là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Daddy Hosuly.`) // actually emits for every single player online to dont get kicked by server
+        //             bot.chat(`> Xin chào ${player.username}! Tớ là Ren Bot thuộc sở hữu của Ruti được lập trình bởi Daddy Hosuly.`) // actually emits for every single player online
         //         }
         //     }
         // })
@@ -132,16 +139,15 @@ function RutiBot() {
         if (!client.guild) {
           return;
         }
-        if (client.author.bot || client.author.id === 'bot id') {
+        if (client.author.bot || client.author.id === 'bot id here') {
         return;
         }
         if (client.channel.id === livechat) {
-            client.react('<:Ruti:960385259529191424>'); // <- dont mind this, its just a emoji react :) you can change it very easy, send "\emoji you want to copy id here"
+            client.react('<:Ruti:960385259529191424>'); // emoji react, u can change it if u want
             bot.chat(`${"["}${client.author.tag}${"] "}${client.content}${""}`);
         }
     });
-
-    bot.on("message", async (bot, message, args, username) => {
+    bot.on("message", async (bot, message, args, username, client) => {
         if (message === 'tps') {
             bot.chat(`${username} Current tps: ${bot.getTps()}`)
         } else if (message === 'online') {
