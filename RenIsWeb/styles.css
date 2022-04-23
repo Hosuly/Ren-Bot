@@ -1,0 +1,98 @@
+body {
+    background-color: #1c1c1c;
+}
+.shopez {
+    text-align: left;
+    position: relative;
+    left: 0px;
+}
+#menu {
+    border-color: silver;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 4px;
+    border-bottom: 4px;
+    border-style: ridge;
+    color: silver;
+    text-rendering: geometricPrecision;
+    text-align: center;
+    width: 100% auto;
+}
+a:link, a:visited {
+    background-color: #6360fc;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: #201cff;
+}
+#cart {
+    position: absolute;
+    top: 90px;
+    left: 200px;
+    color:silver;
+    border: silver;
+    border-radius: 3px;
+    border-color: silver;
+}
+#pvpkit {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    width: max-content;
+    margin: 0px auto;
+    width: 300px;
+    height: 10px;
+}
+#buildkit {
+    position: absolute;
+    top: 140px;
+    left: 128px;
+    width: max-content;
+    margin: 0px auto;
+    width: 300px;
+    height: 10px;
+}
+#thuebot {
+    position: absolute;
+    top: 140px;
+    left: 280px;
+    width: max-content;
+    margin: 0px auto;
+    width: 300px;
+    height: 10px;
+}
+#shoptitle {
+    top: 0px;
+    position: static;
+    left: 0px;
+    color: rgb(255, 209, 110);
+    font-family: 'Stick', cursive; 
+    border-style: solid;
+    border-color: rgb(255, 62, 62);
+    border-width: thick;
+    border-radius: 8px;
+    border-left: 0px;
+    border-right: 0px;
+    border-inline-end: 0px;
+    width: 5.1cm;
+    font-style: italic;
+}
+#tonop {
+    font-family: 'Reggae One', cursive;
+    color: #6360fc;
+    left: 0px;
+}
+#regs {
+    position: fixed;
+    top: 60px;
+    left: 1189px;
+    border-width: 30px;
+}
