@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "minecraft-server-util": "^5.2.9",
+    "mineflayer": "^4.3.0",
+    "mineflayer-antiafk": "^1.1.1",
+    "mineflayer-navigate": "^0.0.10",
+    "mineflayer-pathfinder": "^2.0.0",
+    "mineflayer-tps": "^1.0.1",
+    "ms": "^2.1.3",
+    "prismarine-viewer": "^1.22.0",
+    "vec3": "^0.1.7"
+  }
+}
