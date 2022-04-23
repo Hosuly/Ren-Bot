@@ -32,7 +32,7 @@ client.on('messageDelete', function(message, channel){
 // Mineflayer Code (Some embed code overhere is from HungChannels <3)
 function RutiBot() {
     const bot = mineflayer.createBot({
-        username: "__REN__",
+        username: "bot username",
         host: `2y2c.org`,
         version: '1.17.1',
         keepAlive: false
@@ -139,7 +139,7 @@ function RutiBot() {
         if (!client.guild) {
           return;
         }
-        if (client.author.bot || client.author.id === '963743100147208212') {
+        if (client.author.bot || client.author.id === 'bot id') {
         return;
         }
         if (client.channel.id === config.livechat) {
